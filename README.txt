@@ -1,6 +1,5 @@
-PONG
+Simple game engine made in C++.
 
-Simple pong game.
-
+Made Pong to test engine.
 Control the blue player with W and S.
 Control the green player with I and K.

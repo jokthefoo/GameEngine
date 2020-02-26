@@ -17,7 +17,7 @@ void Engine::TeleportController::UpdateGameObject()
 
 Engine::Math::Vector2 Engine::TeleportController::GetRandLoc()
 {
-	int x = rand() % 100;
-	int y = rand() % 100;
+	float x = rand() % 100;
+	float y = rand() % 100;
 	return Engine::Math::Vector2(x,y);
 }

@@ -71,7 +71,7 @@ void Engine::Renderer::RenderSprites()
 	{
 		ObjectRenderer objR = spriteList.GetAt(i);
 		GLib::Sprites::Sprite* spr = objR.sprite;
-		GLib::Sprites::RenderSprite(*spr, { objR.obj->GetPos().x,objR.obj->GetPos().y }, objR.obj->GetRot());
+		GLib::Sprites::RenderSprite(*spr, { objR.obj->GetPos().x,objR.obj->GetPos().y}, objR.obj->GetRot());
 	}
 
 	// Tell GLib we're done rendering sprites

@@ -9,7 +9,9 @@ namespace Engine
 	public:
 		GameObject();
 		GameObject(const Engine::Math::Vector2 & initPos);
+		GameObject(const Engine::Math::Vector2 & initPos, float rot);
 		void UpdatePos(const Engine::Math::Vector2 & movVec);
+		void UpdateRot(float i_rot);
 		Engine::Math::Vector2 GetPos();
 		Engine::Math::Vector2 GetVel();
 		void SetVel(Engine::Math::Vector2 newVel);
@@ -21,6 +23,7 @@ namespace Engine
 		Engine::Math::Vector2 velocity;
 		float rotation;
 	};
+	GameObject* CreateGameobject(const char* fileName);
 	static LinkedList<GameObject> gameObjectList;
 	void GameObjectShutdown();
 }

@@ -1,0 +1,30 @@
+After running collision unit test for 90 seconds before changes:
+
+LinkedList.GetAt 20%
+Matrix Inverse 15%
+Matrix Multiply 8%
+CreateZrot 6.5%
+Matrix vec multiply 4.5%
+
+Two attempts at SIMD version of matrix multiply, both have made it worse.
+Tried pulling in Joe's SIMD matrix multiply. Also made it worse.
+
+LinkedList.GetAt 20%
+Matrix Inverse 13%
+Matrix Multiply 13%%
+CreateZrot 6.5%
+Matrix vec multiply 4.5%
+
+Pulled in Joe's SIMD matrix inverse, which also made it worse.
+
+LinkedList.GetAt 20%
+Matrix Inverse 17%
+Matrix Multiply 12%
+CreateZrot 6.5%
+Matrix vec multiply 4.5%
+
+
+I think what is happening is by trying to use SIMD code it is forcing the compiler to compile down
+to specific assembly code. But without the SIMD code the compiler is able to refactor the code to run 
+even better than my SIMD code. Or I'm doing something wrong. Either way the biggest offender is my linkedlist
+getat function, so the best optimization would be refactoring that or using a different structure.

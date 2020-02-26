@@ -6,6 +6,7 @@
 #include "Timing.h"
 #include "Renderer.h"
 #include <string>
+#include "BoxCollider.h"
 
 #ifdef _DEBUG
 #define _CRTDBG_MAP_ALLOC
@@ -43,6 +44,9 @@ bool Engine::Run()
 	//Run physics
 	Engine::Physics::Update(dt);
 
+	//Run collisions
+	Engine::Collision::Update(dt);
+
 	//Render sprites
 	Renderer::RenderSprites();
 
@@ -53,6 +57,7 @@ void Engine::Shutdown()
 {
 	Renderer::Shutdown();
 	Physics::Shutdown();
+	Collision::Shutdown();
 	GameObjectShutdown();
 	// IMPORTANT:  Tell GLib to shutdown, releasing resources.
 	GLib::Shutdown();

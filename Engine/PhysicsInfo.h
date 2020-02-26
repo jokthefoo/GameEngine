@@ -9,11 +9,13 @@ namespace Engine
 		{
 		public:
 			PhysicsInfo();
-			PhysicsInfo(GameObject*, float, float);
+			PhysicsInfo(GameObject*, float, float, int, int);
 			GameObject* obj;
 			float mass;
 			float drag;
+			Engine::Math::Vector2 accel;
 			bool gravity;
+			bool isStatic;
 		};
 		static float Gravity = -0;
 		void Update(float dt);

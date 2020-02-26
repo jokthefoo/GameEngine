@@ -28,7 +28,7 @@ float Engine::Timing::CalcTimeSinceLastCall()
 		double elapsedTicks = static_cast<double>(EndTime.QuadPart - StartTime.QuadPart);
 
 		// Calculate the frame time - converting ticks to ms.
-		g_LastFrameTime_ms = static_cast<double>(elapsedTicks / freqms);
+		g_LastFrameTime_ms = static_cast<float>(elapsedTicks / freqms);
 	}
 	else {
 		g_LastFrameTime_ms = 13.3f; // Assume a 60Hz frame for first call.
